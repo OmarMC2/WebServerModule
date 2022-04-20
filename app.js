@@ -10,11 +10,14 @@ app.use( express.static('public') );
 
 
 app.get('/', function (req, res) {
-  res.send('Hello World')
+  res.sendFile(__dirname + '/public/index.html')
 })
 
-app.get('/holaMundo', function (req, res) {
-    res.send('Hola mundo en español')
+app.get('/generic', function (req, res) {
+    res.sendFile(__dirname + '/public/generic.html')
+  })
+app.get('/elements', function (req, res) {
+    res.sendFile(__dirname + '/public/elements.html')
   })
 
   app.get('*', function (req, res) {
